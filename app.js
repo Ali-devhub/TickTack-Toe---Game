@@ -17,6 +17,25 @@ let winPatterns = [
     [2, 4, 6]
 ];
 console.log(`Game's JS file has been sucessfully loaded`);
+
+
+let btnCounter = 0;
+const ifDraw = () => {
+    for (box of btnBoxes) {
+        box.addEventListener("click", () => {
+            btnCounter++;
+            console.log(`button is clicked for ${btnCounter} time`);
+            if (btnCounter === 9){
+            showDraw();
+             btnCounter = 0;
+               
+        }
+        })
+       
+    }
+}
+
+
 btnBoxes.forEach( (box) => {
     box.addEventListener("click", () => {
         console.log("Box was clicked");
@@ -26,12 +45,15 @@ btnBoxes.forEach( (box) => {
         }
         else {
               box.innerText = "X";
+              box.style.color= "black";
               turnO = true;
         }
 
     box.style.fontSize  = "8vmin";
     box.disabled = true;
     checkWinner();
+
+    
   
     });
 });
@@ -52,7 +74,11 @@ const enableBoxes = () => {
 
 };
 
-
+const showDraw = () => {
+    msg.innerText =` OOPS A DRAW! `;
+    msgContainer.classList.remove("hide");
+    disableBoxes();
+};
 
 
 const showWinner = (winner) => {
@@ -63,6 +89,7 @@ const showWinner = (winner) => {
     
 };
     const checkWinner = () => {
+        
         for(let pattern of winPatterns){
             // console.log(pattern[0], pattern[1], pattern[2]);
             // console.log(btnBoxes[pattern[0]].innerText,
