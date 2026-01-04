@@ -70,7 +70,13 @@ body{
 }
 
 .msg-contain{
- height: 20vmin;
+    height: 100vmin;
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    gap: 4rem;
 }
 
 .hide {

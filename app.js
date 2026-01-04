@@ -44,11 +44,21 @@ const disableBoxes = () => {
 
 };
 
+const enableBoxes = () => {
+    for (let box of btnBoxes) {
+        box.disabled= false;
+        box.innerText = "";
+    }
+
+};
+
+
+
 
 const showWinner = (winner) => {
     msg.innerText =` Congratulation, winner is ${winner} `;
     msgContainer.classList.remove("hide");
-    disableBoxes()''
+    disableBoxes();
 
     
 };
@@ -67,8 +77,6 @@ const showWinner = (winner) => {
             if(pos1Val != "" && pos2Val != "" && pos3Val != ""){
                 if(pos1Val === pos2Val && pos2Val === pos3Val){
                     console.log("winner");
-                    alert(`Player ${pos1Val} you've won`);
-                    
                     showWinner(pos1Val);
                 }
             }
@@ -78,6 +86,11 @@ const showWinner = (winner) => {
 
     const resetGame = () => {
         turnO = true;
+        enableBoxes();
 
+         msgContainer.classList.add("hide");
+      
     }
- 
+
+newGameButton.addEventListener("click", resetGame);
+btnReset.addEventListener("click", resetGame);
