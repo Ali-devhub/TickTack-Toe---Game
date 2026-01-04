@@ -1,0 +1,1 @@
+let btn_boxes = document.querySelectorAll(".btn-box"); 
