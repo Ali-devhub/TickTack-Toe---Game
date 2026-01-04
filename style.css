@@ -35,7 +35,9 @@ body{
     border: none;
     box-shadow: 0 0 1rem rgba(0,0,0,0.5);
     font-size: 9vmin;
-    color: #b0413e
+    color: #b0413e;
+    background-color: #ffffc7;
+
 
 
 
@@ -50,3 +52,28 @@ body{
     border-radius: 1rem;
 
 }
+
+#btn-newgame {
+    padding: 1rem;
+    font-size: 1.25rem;
+    background-color: #191913;
+    color: white;
+    border: none;
+    border-radius: 1rem;
+
+}
+
+
+#winner{
+    color: #ffffc7;
+    font-size: 5vmin;
+}
+
+.msg-contain{
+ height: 20vmin;
+}
+
+.hide {
+    display:none;
+}
+
